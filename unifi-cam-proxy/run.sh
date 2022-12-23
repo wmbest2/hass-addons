@@ -21,5 +21,5 @@ unifi-cam-proxy -H $NVR_IP -i $CAM_IP -c $temp_file -t $TOKEN \
     -p $PASSWORD \
     --motion-index 0 \
     --snapshot-channel 1 \
-    --ffmpeg-args=$FFMPEG_PARAMS
+    --ffmpeg-args="$FFMPEG_PARAMS"
 
