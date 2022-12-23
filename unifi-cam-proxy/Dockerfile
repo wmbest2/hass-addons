@@ -1,17 +1,19 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:3.16
-FROM $BUILD_FROM as builder
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-python:3.10-alpine3.16
+FROM $BUILD_FROM
 MAINTAINER wmbest2@gmail.com
+
+RUN apk add --no-cache gcc \
+    linux-headers \
+    libusb-dev \
+    ffmpeg \
+    netcat-openbsd \
+    git
+
 WORKDIR /app
-
-ENV LANG C.UTF-8
-
-# Copied with minor edits from https://github.com/hertzg/rtl_433_docker/blob/master/images/alpine/build-context/Dockerfile
-RUN apk add --no-cache gcc libc-dev linux-headers libusb-dev
-RUN apk add --no-cache ffmpeg=4.1.6-r0 netcat-openbsd git
 
 RUN pip install unifi-cam-proxy
 
-# Run script
+# Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
 

@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv bashio
 
+CONFIG_PATH=/data/options.json
+
 NVR_IP="$(bashio::config 'nvr_ip')"
 CAM_IP="$(bashio::config 'cam_ip')"
 TOKEN="$(bashio::config 'token')"
