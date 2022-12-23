@@ -10,4 +10,16 @@ PASSWORD="$(bashio::config 'password')"
 CERT="$(bashio::config 'cert')"
 FFMPEG_PARAMS="$(bashio::config 'ffmpeg_params')"
 
-echo "Hello $NVR_IP"
+temp_file=$(mktemp)
+trap "rm -f $temp_file" 0 2 3 15
+
+echo $CERT >> $tmp_file
+
+unifi-cam-proxy -H $NVR_IP -i $CAM_IP -c $temp_file -t $TOKEN \
+    amcrest \
+    -u $USERNAME \
+    -p $PASSWORD \
+    --motion-index 0 \
+    --snapshot-channel 1 \
+    --ffmpeg-args=$FFMPEG_PARAMS
+
