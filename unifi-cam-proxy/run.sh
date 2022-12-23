@@ -13,7 +13,7 @@ FFMPEG_PARAMS="$(bashio::config 'ffmpeg_params')"
 temp_file=$(mktemp)
 trap "rm -f $temp_file" 0 2 3 15
 
-echo $CERT >> $temp_file
+$temp_file <<< $CERT
 
 unifi-cam-proxy -H $NVR_IP -i $CAM_IP -c $temp_file -t $TOKEN \
     amcrest \
