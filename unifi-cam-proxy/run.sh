@@ -10,7 +10,7 @@ PASSWORD="$(bashio::config 'password')"
 CERT="$(bashio::config 'cert')"
 FFMPEG_PARAMS="$(bashio::config 'ffmpeg_params')"
 
-temp_file=$(mktemp)
+temp_file=$(mktemp -p "/data")
 trap "rm -f $temp_file" 0 2 3 15
 
 $temp_file <<< $CERT
