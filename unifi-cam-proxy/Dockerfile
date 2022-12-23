@@ -5,6 +5,7 @@ MAINTAINER wmbest2@gmail.com
 RUN apk add --no-cache gcc \
     linux-headers \
     libusb-dev \
+    musl-dev \
     ffmpeg \
     netcat-openbsd \
     git
