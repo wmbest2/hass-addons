@@ -1,0 +1,20 @@
+name: "Amcrest Unifi Cam Proxy"
+description: "Amcrest Unifi Cam Proxy"
+version: "1.0.0"
+slug: "amcrest-unifi-cam-proxy"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: before
+schema:
+  nvr_ip: str
+  cam_ip: str
+  token: str
+  username: str
+  password: str
+  cert: str
+  ffmpeg_params: str 
