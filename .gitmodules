@@ -1,0 +1,3 @@
+[submodule "unifi-cam-proxy/unifi-cam-proxy"]
+	path = unifi-cam-proxy/unifi-cam-proxy
+	url = git@github.com:keshavdv/unifi-cam-proxy.git

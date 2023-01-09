@@ -12,7 +12,8 @@ RUN apk add --no-cache gcc \
 
 WORKDIR /app
 
-RUN pip install unifi-cam-proxy
+COPY unifi-cam-proxy unifi-cam-proxy
+RUN cd ./unifi-cam-proxy && pip install .
 
 # Copy data for add-on
 COPY run.sh /

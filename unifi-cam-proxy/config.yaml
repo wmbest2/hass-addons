@@ -1,6 +1,6 @@
 name: "Amcrest Unifi Cam Proxy"
 description: "Amcrest Unifi Cam Proxy"
-version: "0.1.5"
+version: "0.1.6"
 slug: "amcrest-unifi-cam-proxy"
 init: false
 arch:
