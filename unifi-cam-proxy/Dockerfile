@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-python:3.10-alpine3.16
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-python:3.9-alpine3.16
 FROM $BUILD_FROM
 MAINTAINER wmbest2@gmail.com
 
